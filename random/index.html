@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Vibes Share</title>
+    <meta
+      name="description"
+      content="Share positive energy between two vibe buckets. Your balance sticks around — no account needed."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+      <div class="floaters" id="floaters"></div>
+      <div class="grain"></div>
+    </div>
+
+    <main class="stage">
+      <header class="brand">
+        <p class="brand__name">Good Vibes</p>
+        <h1 class="brand__line">Pass the energy.</h1>
+        <p class="brand__sub">
+          Two buckets. One shared mood. Move vibes around — your split remembers you.
+        </p>
+      </header>
+
+      <section class="arena" aria-label="Vibe buckets">
+        <article class="bucket" data-side="left">
+          <div class="bucket__jar">
+            <div class="bucket__liquid" id="liquid-left">
+              <span class="bucket__shine"></span>
+              <span class="bucket__wave"></span>
+              <span class="bucket__wave bucket__wave--2"></span>
+              <span class="bubbles" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+              </span>
+            </div>
+            <div class="bucket__glass"></div>
+          </div>
+          <div class="bucket__meta">
+            <h2 class="bucket__label">You</h2>
+            <p class="bucket__pct" id="pct-left">50%</p>
+          </div>
+        </article>
+
+        <div class="transmitter">
+          <div class="transmitter__aura" aria-hidden="true"></div>
+          <div class="transmitter__ring transmitter__ring--idle" aria-hidden="true"></div>
+          <div class="transmitter__ring transmitter__ring--idle transmitter__ring--idle-2" aria-hidden="true"></div>
+          <div class="transmitter__ring" aria-hidden="true"></div>
+          <div class="transmitter__ring transmitter__ring--delay" aria-hidden="true"></div>
+          <img
+            class="transmitter__img"
+            src="assets/vibe-sender.jpeg"
+            width="200"
+            height="200"
+            alt="Cartoon bird intensely sending good vibes"
+          />
+          <p class="transmitter__caption" id="status">Ready to beam</p>
+        </div>
+
+        <article class="bucket" data-side="right">
+          <div class="bucket__jar">
+            <div class="bucket__liquid" id="liquid-right">
+              <span class="bucket__shine"></span>
+              <span class="bucket__wave"></span>
+              <span class="bucket__wave bucket__wave--2"></span>
+              <span class="bubbles" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+              </span>
+            </div>
+            <div class="bucket__glass"></div>
+          </div>
+          <div class="bucket__meta">
+            <h2 class="bucket__label">Yassiii</h2>
+            <p class="bucket__pct" id="pct-right">50%</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="controls" aria-label="Share vibes">
+        <label class="amount">
+          <span class="amount__label">Vibes to send</span>
+          <div class="amount__row">
+            <button type="button" class="chip" data-amount="5">5%</button>
+            <button type="button" class="chip" data-amount="10">10%</button>
+            <button type="button" class="chip is-active" data-amount="15">15%</button>
+            <button type="button" class="chip" data-amount="25">25%</button>
+            <input
+              id="amount"
+              class="amount__input"
+              type="number"
+              min="1"
+              max="100"
+              value="15"
+              inputmode="numeric"
+              aria-label="Custom percentage"
+            />
+          </div>
+        </label>
+
+        <div class="actions">
+          <button type="button" class="send send--to-right" id="send-right">
+            Send → Yassiii
+          </button>
+          <button type="button" class="send send--to-left" id="send-left">
+            ← Send to You
+          </button>
+        </div>
+
+        <button type="button" class="reset" id="reset">Balance to 50 · 50</button>
+      </section>
+    </main>
+
+    <div class="beam-layer" id="beams" aria-hidden="true"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
