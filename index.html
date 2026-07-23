@@ -34,6 +34,16 @@
         </p>
       </header>
 
+      <aside class="emergency-banner" id="emergency-banner" hidden>
+        <p class="emergency-banner__eyebrow">Emergency vibe protocol</p>
+        <p class="emergency-banner__title" id="emergency-message">
+          Yassiii’s bucket can’t hold this much love
+        </p>
+        <p class="emergency-banner__sub">
+          Overflow engaged · send back to Hamza to cool it down
+        </p>
+      </aside>
+
       <section class="arena" aria-label="Vibe buckets">
         <article class="bucket" data-side="left">
           <div class="bucket__jar">
@@ -70,13 +80,21 @@
         </div>
 
         <article class="bucket" data-side="right">
+          <div class="bucket__overflow" aria-hidden="true">
+            <div class="bucket__splash"></div>
+            <div class="bucket__wave-lip">
+              <i></i><i></i><i></i>
+            </div>
+            <div class="bucket__cascade bucket__cascade--left"></div>
+            <div class="bucket__cascade bucket__cascade--right"></div>
+          </div>
           <div class="bucket__jar">
             <div class="bucket__liquid" id="liquid-right">
               <span class="bucket__shine"></span>
               <span class="bucket__wave"></span>
               <span class="bucket__wave bucket__wave--2"></span>
               <span class="bubbles" aria-hidden="true">
-                <i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i><i></i>
               </span>
             </div>
             <div class="bucket__glass"></div>
@@ -84,6 +102,7 @@
           <div class="bucket__meta">
             <h2 class="bucket__label">Yassiii</h2>
             <p class="bucket__pct" id="pct-right">50%</p>
+            <p class="bucket__overflow-tag" id="overflow-tag" hidden>OVERFLOW</p>
           </div>
         </article>
       </section>
@@ -100,13 +119,17 @@
               id="amount"
               class="amount__input"
               type="number"
-              min="1"
+              min="0.5"
               max="100"
+              step="0.5"
               value="15"
-              inputmode="numeric"
+              inputmode="decimal"
               aria-label="Custom percentage"
             />
           </div>
+          <p class="amount__hint" id="amount-hint" hidden>
+            Emergency code armed — hit Send → Yassiii to flood the vibes
+          </p>
         </label>
 
         <div class="actions">
@@ -123,6 +146,7 @@
     </main>
 
     <div class="beam-layer" id="beams" aria-hidden="true"></div>
+    <div class="emergency-veil" id="emergency-veil" aria-hidden="true"></div>
 
     <script src="app.js"></script>
   </body>
